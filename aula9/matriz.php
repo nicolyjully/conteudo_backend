@@ -1,0 +1,55 @@
+<h2>Matriz</h2>
+<p>
+    São estruturas de dados bidimensional,
+    onde é necessário informar 2 indices para 
+    realizar o acesso de um valor.
+</p>
+<p>
+    Na prática consiste de um vetor que armazena
+    outros vetores.
+</p>
+
+<?php
+    $produto1 = [
+        "nome" => "Câmera",
+        "marca" => "LG",
+        "preco" => 2500
+    ];
+   
+    $produto2 = [
+        "nome" => "Notebook",
+        "marca" => "Dell",
+        "preco" => 7500
+    ];
+   
+    $produto3 = [
+        "nome" => "Smatphone",
+        "marca" => "Samsung",
+        "preco" => 3500
+    ];
+
+    $produtos = [
+        $produto1,
+        $produto2,
+        $produto3
+];
+
+    //imprimir todos os valores de matriz, utilizando
+    //duas estruturas de repetição, 1 para as linhas outra para
+    //as colunas
+    for($i=0; $i<=2; $i++){
+    foreach($produtos[$i] as $key => $value){
+        echo $value. "<br>";
+    }
+}
+
+echo "<table boder=1>";
+//outra forma
+foreach($produtos as $key => $produto){
+    echo "<tr>";
+    echo "<td>" . $produto["nome"] . "</td>";
+    echo "<td>" . $produto["marca"] . "</td>";
+    echo "<td>" . $produto["preco"] . "</td>";
+echo "</tr>";
+}
+echo "</table>";
