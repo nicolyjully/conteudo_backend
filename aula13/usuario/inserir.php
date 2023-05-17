@@ -1,13 +1,23 @@
-<?php 
+<?php
+require_once "../conexao.php";
 
-// importa o arquivo de conexão
- require_once "../conexao.php";
+if(isset($_POST["n1"]) && isset($_POST["n2"]) && isset($_POST["n3"])){
 
-$SQL  = "INSERT INTO `db_catalogo_3infob`.`usuario` (`nome`, `login`, `senha`) VALUES ('nicoly', 'admin123', '123');";
+require_once "faz_upload.php";
 
-//prepara o comando para ser executado no mysql 
-$comando = $conexao-> prepare($SQL);
+$nome = $_POST["n1"];
+$login = $_POST["n2"];
+$senha = password_hash($_POST["n3"], PASSWORD_BCRYPT);
 
+$sql = "INSERT INTO `usuario` (`nome`, `login`, `senha`, `foto`) VALUES (?, ?, ?, ?);";
 
-//executa o comando 
+echo $sql;
+
+$comando = $conexao->prepare($sql);
+
+$comando->bind_param("ssss", $nome , $login , $senha, $nome_foto); 
+
 $comando->execute();
+
+}
+header('location: ../usuarios.php');
