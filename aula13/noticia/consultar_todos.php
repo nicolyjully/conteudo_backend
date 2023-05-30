@@ -2,7 +2,7 @@
 require_once "../banco/conexao.php";
 
 
-$sql = "SELECT * FROM usuario"; 
+$sql = "SELECT * FROM noticia"; 
 
 $comando = $conexao->prepare($sql);
 
@@ -10,6 +10,6 @@ $comando->execute();
 
 $resultado = $comando->get_result();
 
-$usuarios = [];
-while ($usuario = $resultado->fetch_object()){
-    $usuarios[] = $usuario; }
+$noticias = [];
+while ($noticia = $resultado->fetch_object()){
+    $noticias[] = $noticia; }

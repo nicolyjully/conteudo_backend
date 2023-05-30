@@ -5,7 +5,7 @@ if(isset($_GET["id"])){
 
 $id = $_GET["id"];
 
-$sql = "SELECT * FROM `usuario` WHERE  `idusuario`= ?;"; 
+$sql = "SELECT * FROM `noticia` WHERE  `idnoticia`= ?;"; 
 
 $comando = $conexao->prepare($sql);
 
@@ -15,6 +15,6 @@ $comando->execute();
 
 $resultado = $comando->get_result();
 
-$usuario = $resultado->fetch_object();
+$noticia = $resultado->fetch_object();
 
 }

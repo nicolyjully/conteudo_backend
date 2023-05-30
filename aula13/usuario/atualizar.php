@@ -1,5 +1,5 @@
 <?php
-require_once "../conexao.php";
+require_once "../banco/conexao.php";
 
 $nome = $_POST["n4"];
 $nome = $_POST["n1"];
@@ -16,4 +16,4 @@ $comando->bind_param("sssi", $nome , $login , $senha , $id);
 
 $comando->execute();
 
-header('location: ../usuarios.php');
+header('location: index.php');

@@ -3,7 +3,7 @@ require_once "../banco/conexao.php";
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM `usuario` WHERE  `idusuario`= ?;"; 
+$sql = "DELETE FROM `noticia` WHERE  `idnoticia`= ?;"; 
 
 echo $sql;
 

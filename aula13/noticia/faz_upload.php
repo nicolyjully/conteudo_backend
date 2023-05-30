@@ -2,10 +2,10 @@
 
 if(!empty($_FILES['foto']['name']) ){
 //local tempporario onde foi realizado o upload da imagem
-$origem = $_FILES['n4']['tmp_name'];
+$origem = $_FILES['foto']['tmp_name'];
 
 //cria um novo nome único para a foto
-$nome_foto=time().$_FILES['n4']['name'];
+$nome_foto=time().$_FILES['foto']['name'];
 
 //local para onde o arquivo de upload vai ser movido
 $destino ="../uploads/$nome_foto";
