@@ -1,5 +1,5 @@
 <?php
-
+require_once "../login/controlar_acesso.php";
 //importa arquivo
 require_once "../banco/conexao.php";
 

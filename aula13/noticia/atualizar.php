@@ -1,4 +1,5 @@
 <?php
+require_once "../login/controlar_acesso.php";
 require_once "../banco/conexao.php";
 require_once "faz_upload.php";
 $id = $_POST['idnoticia'];

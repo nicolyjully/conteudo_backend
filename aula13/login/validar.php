@@ -24,14 +24,18 @@ $resultado = $comando->get_result();
 //pega a primeira linha do resultado da consulta
 $usuario = $resultado->fetch_object();
 
-if($usuario !=null and password_verify($senha, $usuario->senha)){
- session_start();
+if($usuario !=null ){
+if(password_verify($senha, $usuario->senha)){
+session_start();
  $_SESSION['usuario'] = $usuario->nome;
  header("Location: ../noticia/index.php");
- die();
+}else{
+    $erro_login = "senha incorreta!";
 }
 
+}else{
+    $erro_login = "não existe usuário com o login informado!";
 }
-    header("Location: formulario.php");
+}
 
 ?>
